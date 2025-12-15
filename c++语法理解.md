@@ -9,3 +9,5 @@
 8. 非空 要 return dummy 
 	1. ListNode* mergeTwoLists要的是指针
 	2. dummy是对象实体（带着-1）；dummy.next才是指针。
+9. ![](assets/c++语法理解/file-20251215202358341.png)
+## 86分隔链表
