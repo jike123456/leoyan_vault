@@ -7,3 +7,5 @@
 6. p =p->next：让本身的指针往前；右边才是变化的
 7. 如果最后留下一串，直接p->next = p1;收留了剩下的一串。
 8. 非空 要 return dummy 
+	1. ListNode* mergeTwoLists要的是指针
+	2. dummy是对象实体（带着-1）；dummy.next才是指针。
