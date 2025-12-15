@@ -12,4 +12,7 @@
 9. ![](assets/c++语法理解/file-20251215202358341.png)
 ## 86分隔链表
 1. 链表往下走的逻辑就是p1 =p1->next;我现在
-2. p1 -> next =p;先把下个人找到了
+2. p1 -> next =p;先牵头![](assets/c++语法理解/file-20251215205800249.png)
+3. listnode temp = p.next;先找个本子记下来，剩下的
+4. p.next =null;把剩下的全部丢了
+5. p =temp；head又回来了
