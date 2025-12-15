@@ -75,7 +75,7 @@ ip a show enp0s3
 
 ---
 
-## 方法二：编辑 `ifcfg` 文件 (适用于 CentOS/RHEL 系统)
+## 方法二：==编辑 `ifcfg` 文件 (适用于 CentOS/RHEL 系统)==
 
 CentOS/RHEL 系列系统长期以来使用 `/etc/sysconfig/network-scripts/` 目录下的 `ifcfg` 文件来管理网络。
 
