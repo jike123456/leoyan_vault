@@ -18,7 +18,7 @@ linux系统很==多软件（内置第三方）==均支持使用systemctl命令�
 
 - yum install -y ntp
 可以通过ntpd服务名，配合systemctl进行控制。
-
+ ^a29e0d
 - yum install -y httpd，安装apache服务器软件
 可以通过httpd服务名，配合systemctl进行控制
 
