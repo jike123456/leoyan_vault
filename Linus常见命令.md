@@ -6,7 +6,7 @@
 5. 玩转文字：figlet “LABEX”  figlet -f slant “LABEX”：-f指定要用字体样式；slant：斜体
 6. clear：工作区东西太多
 7. pwd ：print word directory打印工作目录/home/itleo
-8. cd：change‘directory更改目录；~；代表主目录
+8. cd：change‘directory更改目录；~；代表主目录 ^0223b4
 	1. 参数：切换到指定目录下；不写直接是home
 	2. 写法：绝对路径（以/根目录为起点进行描述）cd /home/itleo/Desktop与相对路径（以当前目录为起点）cd Desktop
 	3. 特殊路径符：. .. ~
