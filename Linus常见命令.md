@@ -161,7 +161,7 @@
 46. # 将用户添加到 sudo 组
 	1. sudo usermod -aG sudo jack：此命令使用 `usermod` 修改用户帐户。 `-aG` 选项表示“追加到组”，因此它会将 jack 添加到 sudo 组，
 	2. sudo groups jack：通过将 jack 添加到 sudo 用户组
-47. # 理解和操作文件权限和所有权
+47. # 理解和操作文件权限和所有权 ^89f4a4
 	1. 我们来检查一下 /home 目录下的当前权限：ls -l /home
 	2. 分析输出total 8 drwxr-xr-x 2 jack jack 4096 Jul 30 10:00 jack drwxr-xr-x 5 labex labex 4096 Jul 30 09:55 labex：第一个字符表示文件类型（ `d` 表示目录， `-` 表示普通文件）第一个字符表示文件类型（ `d` 表示目录， `-` 表示普通文件）这些字符后面的用户名是文件所有者，后面是组所有者。
 	3. 我们创建一个新文件并更改其所有权：
