@@ -28,34 +28,33 @@
 
 * cpp最小堆示例
 	```bash
-#include <iostream>
-#include <queue>
-#include <vector> // 必须引入 vector
-using namespace std;
-
-int main() {
-    // ⚠️ 重点来了：定义最小堆的咒语
-    // 1. int: 存整数
-    // 2. vector<int>: 底层用什么容器（默认就是vector）
-    // 3. greater<int>: 比较规则，“大于”意味着放后面 -> 小的就跑前面去了
-    priority_queue<int, vector<int>, greater<int>> minHeap;
-
-    // 📥 入队（Push）
-    minHeap.push(10);
-    minHeap.push(5);  // 5 比 10 小，5 会自动浮到顶端
-    minHeap.push(30);
-    minHeap.push(2);  // 2 比 5 还小，2 现在是顶端
-
-    // 📤 查看最小的（Top）
-    cout << "当前最小的数字是: " << minHeap.top() << endl; // 输出 2
-
-    // 🗑️ 删掉最小的（Pop）
-    minHeap.pop(); // 把 2 扔掉
-    
-    // 谁接班？剩下的数字里最小的 (5) 会自动补位
-    cout << "现在的最小数字是: " << minHeap.top() << endl; // 输出 5
-
-    return 0;
-}
-
-```
+	#include <iostream>
+	#include <queue>
+	#include <vector> // 必须引入 vector
+	using namespace std;
+	
+	int main() {
+	    // ⚠️ 重点来了：定义最小堆的咒语
+	    // 1. int: 存整数
+	    // 2. vector<int>: 底层用什么容器（默认就是vector）
+	    // 3. greater<int>: 比较规则，“大于”意味着放后面 -> 小的就跑前面去了
+	    priority_queue<int, vector<int>, greater<int>> minHeap;
+	
+	    // 📥 入队（Push）
+	    minHeap.push(10);
+	    minHeap.push(5);  // 5 比 10 小，5 会自动浮到顶端
+	    minHeap.push(30);
+	    minHeap.push(2);  // 2 比 5 还小，2 现在是顶端
+	
+	    // 📤 查看最小的（Top）
+	    cout << "当前最小的数字是: " << minHeap.top() << endl; // 输出 2
+	
+	    // 🗑️ 删掉最小的（Pop）
+	    minHeap.pop(); // 把 2 扔掉
+	    
+	    // 谁接班？剩下的数字里最小的 (5) 会自动补位
+	    cout << "现在的最小数字是: " << minHeap.top() << endl; // 输出 5
+	
+	    return 0;
+	}
+	```
