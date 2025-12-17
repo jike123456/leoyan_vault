@@ -27,7 +27,7 @@
 应用场景：==进行比较时候==
 
 * cpp最小堆示例
-	```bash
+```bash
 	#include <iostream>
 	#include <queue>
 	#include <vector> // 必须引入 vector
@@ -57,4 +57,4 @@
 	
 	    return 0;
 	}
-	```
+```
