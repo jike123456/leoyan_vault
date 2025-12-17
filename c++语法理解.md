@@ -59,3 +59,31 @@
 	}
 ```
 * cpp最大堆
+```bash
+	#include <iostream>
+	#include <queue> // 堆也包含在这个头文件里
+	using namespace std;
+	
+	int main() {
+	    // 创建一个大顶堆（默认最大的在上面）
+	    priority_queue<int> bossGroup;
+	
+	    // 乱序放入数字
+	    bossGroup.push(10);
+	    bossGroup.push(50);
+	    bossGroup.push(30);
+	    bossGroup.push(90);
+	
+	    // 堆会自动把最大的调整到顶部
+	    // top: 看看最大的老板是谁
+	    cout << "最大的数字是: " << bossGroup.top() << endl; // 输出 90
+	
+	    // pop: 最大的老板退休了
+	    bossGroup.pop(); 
+	    
+	    // 二把手上位
+	    cout << "现在的最大数字是: " << bossGroup.top() << endl; // 输出 50
+	
+	    return 0;
+	}
+```
