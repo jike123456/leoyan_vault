@@ -133,12 +133,11 @@ CREATE USER 'remote_user'@'%' IDENTIFIED BY 'YourRemotePassword!';
 
 # 授予该用户所有数据库的所有权限（根据实际需求调整权限）
 GRANT ALL PRIVILEGES ON *.* TO 'remote_user'@'%';
-
 # 刷新权限
 FLUSH PRIVILEGES;
 ```
-**注意：** `'%'` 表示允许从任何主机连接，你也可以指定特定的IP地址，例如 `'192.168.1.100'`。
-
+**注意：** `'%'` 表示允许从任何主机连接，==你也可以指定特定的IP地==址，例如 `'192.168.1.100'`。
+![1000](assets/第五章-02-MySQL5.7在CentOS安装-单机软件-/file-20251218154254277.png)
 ### 6.2 开放防火墙端口
 
 如果你的CentOS系统启用了`firewalld`（默认启用），需要开放MySQL的默认端口`3306`。
