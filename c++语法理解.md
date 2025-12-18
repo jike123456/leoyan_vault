@@ -32,3 +32,10 @@ for (ListNode* head : lists) {
 ```
 Lists;本来就是装头节点的数组
 ListNode* head已经完成了定义；叫head的临时指针
+
+p->next = Node;不用担心来的是一个链表
+下一次执行的时候就会被覆盖掉
+
+不要忘了将下一个节点放入循环
+
+
