@@ -122,7 +122,7 @@ set global validate_password_length=8; # 设为8
 
 ## 6. 配置远程访问（可选）
 
-默认情况下，MySQL `root` 用户只能从 `localhost` 访问。如果需要从其他机器连接MySQL，需要创建新的用户或修改`root`用户的权限。
+默认情况下，MySQL `root` 用户只能从 `localhost` 访问。==如果需要从其他机器连接MySQL，需要创建新的用户或修改`root`用户的权限==。
 
 ### 6.1 创建新用户并授权
 
