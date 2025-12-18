@@ -138,12 +138,12 @@ FLUSH PRIVILEGES;
 ```
 **注意：** `'%'` 表示允许从任何主机连接，==你也可以指定特定的IP地==址，例如 `'192.168.1.100'`。
 ![1000](assets/第五章-02-MySQL5.7在CentOS安装-单机软件-/file-20251218154254277.png)
-exit与ctrl+d均可退出MYSQL
+==exit与ctrl+d均可退出MYSQL==
 ### 6.2 检查端口
 [端口](第四章-09-端口.md#^3fee90)
 可以通过检查端口
 ```
-
+netstat -anp|grep 3306
 ```
 如果你的CentOS系统启用了`firewalld`（默认启用），需要开放MySQL的默认端口`3306`。
 ```bash
