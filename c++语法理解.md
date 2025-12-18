@@ -24,5 +24,11 @@
 [堆：金字塔等级设置](数据结构.md#堆：金字塔等级设置)
 ### **[[虚拟头节点]]**
 ```
-
+for (ListNode* head : lists) {
+	if (head != nullptr) {
+		pq.push(head); 
+	} 
+}
 ```
+Lists;本来就是装头节点的数组
+
