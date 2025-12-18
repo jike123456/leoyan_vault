@@ -1,4 +1,7 @@
 ## grep基础语法
+
+^ebd24d
+
 grep [选项参数] '搜索内容(模式)' [目标文件]
 grep 'temporary password' /var/log/mysqld.log
 

@@ -87,10 +87,10 @@ MySQL 5.7在首次启动时会进行初始化，并为`root`用户生成一个�
 sudo grep 'temporary password' /var/log/mysqld.log
 ```
 你将看到类似 `root@localhost: <临时密码>` 的输出。记下这个临时密码。
-
+[grep](第二章-11-grep-wc-管道符.md#^ebd24d)
 ### 5.2 登录MySQL并修改`root`密码
 
-使用临时密码登录MySQL：
+==使用临时密码登录MySQL==：
 ```bash
 mysql -uroot -p
 ```
