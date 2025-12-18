@@ -109,8 +109,8 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'YourNewSecurePassword123!';
 SHOW VARIABLES LIKE 'validate_password%';
 
 # 临时修改密码策略 (仅供测试或学习环境使用)
-set global validate_password_policy=0;   # 设为LOW，只检查长度
-set global validate_password_length=6;  # 设为最小长度，例如6
+set global validate_password_policy=0;   # 设为LOW，只检查长度============
+set global validate_password_length=6;  # 设为最小长度，例如6=============
 
 # 再次修改密码（使用简单密码）
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'newpassword';
