@@ -96,7 +96,7 @@ mysql -uroot -p
 ```
 输入你刚刚找到的临时密码。
 
-登录成功后，MySQL会强制你修改`root`密码。MySQL 5.7默认启用了密码策略验证插件（`validate_password`），要求密码必须包含大小写字母、数字、特殊字符，并且长度至少为8位。
+登录成功后，MySQL会强制你==修改`root`密码。==MySQL 5.7默认启用了密码策略验证插件（`validate_password`），要求密码必须包含大小写字母、数字、特殊字符，并且长度至少为8位。
 
 ```sql
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'YourNewSecurePassword123!';
