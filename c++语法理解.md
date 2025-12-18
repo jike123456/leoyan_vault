@@ -31,4 +31,4 @@ for (ListNode* head : lists) {
 }
 ```
 Lists;本来就是装头节点的数组
-
+ListNode* head已经完成了定义；叫head的临时指针
