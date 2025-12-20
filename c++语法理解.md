@@ -59,3 +59,4 @@ if (fast == nullptr || fast->next == nullptr)
 
 数学公式：a+c+b =b+c+a
 
+三元运算符
