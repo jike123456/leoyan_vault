@@ -43,4 +43,11 @@ p->next = Node;不用担心来的是一个链表
 快慢指针相遇则存在，那么==停止条件==是什么呢？
 快慢指针相遇return；==无环的话则fast会变成null或者fast的next会变成null==
 
-以上任意一个满足都不能是环了，==true false 必须是false。所以是&&。==
+while (fast != nullptr && fast->next != nullptr)
+以上任意一个满足就不执行了跳出循环，==true false 必须是false。所以是&&。==
+
+if (fast == nullptr || fast->next == nullptr)
+但凡有true就执行
+![500](assets/c++语法理解/file-20251220141944397.png)
+![500](assets/c++语法理解/file-20251220142025308.png)
+同样速度一个从相遇点一个从开头出发，再次相遇是环起点。
