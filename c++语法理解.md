@@ -58,3 +58,4 @@ if (fast == nullptr || fast->next == nullptr)
 可将AB分为公共部分c，与独有部分a，b。
 
 数学公式：a+c+b =b+c+a
+
