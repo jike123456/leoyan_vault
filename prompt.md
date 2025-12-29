@@ -6,3 +6,5 @@
 ## 视频
  https://www.bilibili.com/video/BV11X4y1j7si/?p=3&share_source=copy_web&vd_source=849df443d0f2d279d0996bec146a23f6把该
   视频合集的视频子集的标题按目录排列出来，并概括主要内容，文件夹就叫 铁头山羊stm32 入门教程
+
+请按视频的目录在铁头山羊stm32 入门教程该目录下生成相应的文件与文件夹
