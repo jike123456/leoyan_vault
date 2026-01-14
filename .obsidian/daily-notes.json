@@ -1,3 +1,5 @@
 {
-  "autorun": true
+  "autorun": true,
+  "folder": "dailynotes",
+  "template": "template/每日打卡"
 }
