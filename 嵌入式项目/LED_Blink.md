@@ -82,3 +82,74 @@ HAL 通用文档说明，`HAL_Init()` 默认会把 HAL 的时间基准配置为 
 - `main.c` 里：**调用者**
 - `stm32f4xx_hal_gpio.c`：`HAL_GPIO_TogglePin` 的实现者
 - `stm32f4xx_hal.c`：`HAL_Delay` 等通用 HAL 函数的实现者
+
+## 四、在一堆文件里，怎么快速找到我要调用的函数？
+
+这部分最重要。我给你一个**以后一直能用的找函数套路**。
+
+### 方法 1：最直接，光标放上去按 `F12`
+
+Keil µVision 的 Source Browser 官方快捷键里写得很清楚：
+
+- `F12`：跳到定义
+- `Ctrl+F12`：跳到声明
+- `Shift+F12`：跳到引用
+- `Ctrl+Shift+F12`：显示所有引用
+- `Alt+Shift+F12`：刷新 Source Browser 视图。
+
+所以你现在就可以这么做：
+
+#### 找 `HAL_GPIO_TogglePin`
+
+1. 在 `main.c` 里，把光标点到 `HAL_GPIO_TogglePin`
+2. 按 `F12`
+3. Keil 会跳到它的定义位置
+
+#### 找 `HAL_Delay`
+
+1. 在 `main.c` 里，把光标点到 `HAL_Delay`
+2. 按 `F12`
+3. Keil 会跳到定义位置
+
+如果没有立刻跳成功，先试 `Alt + Shift + F12` 刷新一下 Source Browser，再按 `F12`。这个也是 Keil 官方给的操作。
+
+---
+
+### 方法 2：按“命名规律”找文件
+
+STM32 HAL 的文件命名非常有规律，基本能猜出来：
+
+- `HAL_GPIO_xxx` → `stm32f4xx_hal_gpio.c/.h`
+- `HAL_UART_xxx` → `stm32f4xx_hal_uart.c/.h`
+- `HAL_TIM_xxx` → `stm32f4xx_hal_tim.c/.h`
+- `HAL_ADC_xxx` → `stm32f4xx_hal_adc.c/.h`
+- `HAL_I2C_xxx` → `stm32f4xx_hal_i2c.c/.h`
+
+这个规律从 ST 官方的 HAL 驱动工程文件里能直接看出来：`Drivers/STM32F4xx_HAL_Driver/Src` 下按外设拆成对应的 `.c` 文件。
+
+所以以后你看见一个函数名，比如：
+
+HAL_UART_Transmit(...)
+
+你几乎就能马上判断：
+
+> 去 `Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c` 找。
+
+这会让你找函数快很多。
+
+---
+
+### 方法 3：看头文件声明，再反推源文件
+
+有时候 `F12` 先跳到的是声明，不一定直接落到函数体。  
+这时你就按这个顺序：
+
+1. 先看声明在哪个 `.h` 里
+2. 根据头文件名，反推 `.c`
+
+比如：
+
+- 声明在 `stm32f4xx_hal_gpio.h`
+- 那实现大概率就在 `stm32f4xx_hal_gpio.c`
+
+因为 HAL 就是这么配套组织的。官方工程文件的 include path 也明确包含 `Drivers/STM32F4xx_HAL_Driver/Inc`，所以头文件和源文件是成套进入工程的
