@@ -192,3 +192,18 @@ BSRR
 串口调试时候
 
 要注意选择串口是usb几 以及是否十六进制
+
+ST 官方的外设学习分类里，GPIO/EXTI/UART 之后，最值得继续往下走的是：
+
+- **TIM**
+- **DMA**
+- **SPI**
+- **I2C**
+- **ADC**  
+    这些都是 STM32 system peripherals / communication / timing / analog 的官方后续入门方向。
+
+如果你是为了找嵌入式软件开发工作，我建议你第 6～10 天按这个顺序接着学：
+
+**TIM → ADC → DMA → I2C/SPI → FreeRTOS**
+
+因为这条路线最贴近 MCU 固件岗位常见能力要求。
