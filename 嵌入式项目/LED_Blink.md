@@ -153,3 +153,36 @@ HAL_UART_Transmit(...)
 - 那实现大概率就在 `stm32f4xx_hal_gpio.c`
 
 因为 HAL 就是这么配套组织的。官方工程文件的 include path 也明确包含 `Drivers/STM32F4xx_HAL_Driver/Inc`，所以头文件和源文件是成套进入工程的
+
+## 六、底层执行流程，你可以这样脑补
+
+你以后看到这段代码：
+
+while (1)  
+{  
+    HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_9);  
+    HAL_Delay(500);  
+}
+
+脑子里就按这个流程过：
+
+### 第一步：进入 `main()`
+
+ST 官方 F4 示例显示，程序开头先执行 `HAL_Init()`，它会建立默认 1ms 的 HAL tick，并做一些通用初始化。
+
+### 第二步：GPIO 已经提前初始化好了
+
+也就是在进入 `while(1)` 前，PF9 已经被配置成输出模式。ST 官方 GPIO_IOToggle 示例里也是先 `HAL_GPIO_Init(...)`，再进死循环。
+
+### 第三步：执行 `HAL_GPIO_TogglePin`
+
+HAL 驱动去改 PF9 的输出状态。  
+你看到的是“调用一个函数”，硬件看到的是“PF9 的电平被改了一次”。这是 HAL 抽象层把寄存器操作封装起来的结果。
+
+### 第四步：执行 `HAL_Delay(500)`
+
+程序等 500ms。这个等待依赖 HAL tick，而 tick 默认来自 SysTick 的 1ms 中断节拍。
+
+### 第五步：死循环回来再做一次
+
+于是 PF9 一会儿高一会儿低，LED 就一会儿亮一会儿灭。
