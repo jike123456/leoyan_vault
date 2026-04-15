@@ -7,7 +7,7 @@
 第一，**主流程很清楚**。  
 `HAL_Init()` → `SystemClock_Config()` → `MX_GPIO_Init()` → `MX_USART1_UART_Init()` → shell 欢迎语 → 主循环接收命令，这条线非常顺。
 
-第二，**你已经开始分层了**。  
+第二，**你已经开始分层了**。  [[分层]]
 `main.c` 里不再直接写 LED 和 UART 底层细节，而是调：
 
 - `BSP_LED_Off()`
