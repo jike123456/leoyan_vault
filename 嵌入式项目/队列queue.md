@@ -75,7 +75,7 @@ xQueueSend(xTempQueue, &temp, portMAX_DELAY);
 意思是：
 
 - 把 `temp` 这个数据送入队列
-- 如果队列满了，就一直等
+- portMAX_DELAY如果队列满了，就一直等
 
 ---
 
