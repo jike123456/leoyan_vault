@@ -112,6 +112,25 @@ xQueueReceive(xTempQueue, &recvTemp, portMAX_DELAY);
 
 `xSemaphoreGive()`
 
+1. **二值信号量**
+    
+    - 状态从 0 → 1
+    - 会唤醒一个正在 `xSemaphoreTake()` 等待该信号量的任务
+2. **计数信号量**
+    
+    - 计数值 +1
+    - 计数值达到最大值时再 give 会失败
+
 ### 获取信号量（等信号）
 
 `xSemaphoreTake()`
+
+```c
+// 任务A：释放信号量 
+xSemaphoreGive(xBinarySem);
+
+// 任务B：等待信号量 
+if(xSemaphoreTake(xBinarySem, portMAX_DELAY) == pdTRUE) {
+	// 被唤醒后执行 
+}
+```
