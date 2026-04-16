@@ -39,3 +39,22 @@ xTaskCreate(TaskB, "TaskB", 128, NULL, 2, NULL);
 
 系统会运行 **Idle Task**
 
+# 练习5：高优先级任务被唤醒时会发生什么
+
+先设定场景：
+
+- `TaskA` 优先级 1，当前正在 Running
+- `TaskB` 优先级 3，之前一直因为等待消息而 Blocked
+- 现在消息到了，`TaskB` 从 Blocked 变成 Ready
+
+## 问题
+
+这时谁运行？`TaskA` 状态会变什么？
+
+---
+
+## 标准答案
+
+- `TaskB` 会开始运行
+- `TaskA` 从 Running 变成 Ready
+
