@@ -8,3 +8,28 @@
 |Running|被挂起 `vTaskSuspend()`|Suspended|
 |Suspended|被恢复 `vTaskResume()`|Ready|
 |Running|被删除 `vTaskDelete()`|Deleted|
+
+Blocked -> Ready -> Running
+
+```c
+void TaskA(void *argument)
+{
+    for (;;)
+    {
+        printf("A\r\n");
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+}
+
+void TaskB(void *argument)
+{
+    for (;;)
+    {
+        printf("B\r\n");
+        vTaskDelay(pdMS_TO_TICKS(500));
+    }
+}
+
+xTaskCreate(TaskA, "TaskA", 128, NULL, 1, NULL);
+xTaskCreate(TaskB, "TaskB", 128, NULL, 2, NULL);
+```
