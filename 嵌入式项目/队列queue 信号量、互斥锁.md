@@ -134,3 +134,31 @@ if(xSemaphoreTake(xBinarySem, portMAX_DELAY) == pdTRUE) {
 	// 被唤醒后执行 
 }
 ```
+
+## 1.为什么需要互斥锁
+
+多个任务可能会访问同一个共享资源：
+
+串口
+LCD
+全局结构体
+文件系统
+I2C/SPI 总线
+
+如果同时访问，就会冲突
+
+## 3. 互斥锁的核心函数
+
+### 创建互斥锁
+
+`xSemaphoreCreateMutex()`
+
+注意：虽然名字里有 `Semaphore`，但它创建的是 **Mutex**
+
+### 获取锁
+
+`xSemaphoreTake(xMutex, portMAX_DELAY);`
+
+### 释放锁
+
+`xSemaphoreGive(xMutex);`
