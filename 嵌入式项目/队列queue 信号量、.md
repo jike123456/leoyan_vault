@@ -89,3 +89,29 @@ xQueueReceive(xTempQueue, &recvTemp, portMAX_DELAY);
 
 - 从队列取一个数据出来
 - 如果队列空了，就一直等
+
+## 二值信号量 Binary Semaphore
+
+所谓二值，就是只有两种状态：
+
+- 有信号
+- 没信号
+
+就像一个开关：
+
+- 0：没有事件
+- 1：有事件
+
+## 4. 关键函数
+
+### 创建二值信号量
+
+`xSemaphoreCreateBinary()`
+
+### 释放信号量（给信号）
+
+`xSemaphoreGive()`
+
+### 获取信号量（等信号）
+
+`xSemaphoreTake()`
