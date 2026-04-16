@@ -33,3 +33,9 @@ void TaskB(void *argument)
 xTaskCreate(TaskA, "TaskA", 128, NULL, 1, NULL);
 xTaskCreate(TaskB, "TaskB", 128, NULL, 2, NULL);
 ```
+
+- TaskA：Blocked
+- TaskB：Blocked
+
+系统会运行 **Idle Task**
+
