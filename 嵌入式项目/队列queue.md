@@ -45,3 +45,47 @@ TaskB: World
 - 谁先拿到锁，谁先用
 - 用完再释放
 - 另一个任务再用
+
+## 3. 队列的核心函数
+
+### 创建队列
+
+`xQueueCreate(队列长度, 每个元素大小)`
+
+例如：
+
+```c
+QueueHandle_t xTempQueue;  
+xTempQueue = xQueueCreate(5, sizeof(int));
+```
+
+意思是：
+
+- 这个队列最多放 5 个元素
+- 每个元素大小是 `int`
+
+---
+
+### 发送数据到队列
+
+```c
+xQueueSend(xTempQueue, &temp, portMAX_DELAY);
+```
+
+意思是：
+
+- 把 `temp` 这个数据送入队列
+- 如果队列满了，就一直等
+
+---
+
+### 从队列接收数据
+
+```c
+xQueueReceive(xTempQueue, &recvTemp, portMAX_DELAY);
+```
+
+意思是：
+
+- 从队列取一个数据出来
+- 如果队列空了，就一直等
