@@ -162,3 +162,34 @@ I2C/SPI 总线
 ### 释放锁
 
 `xSemaphoreGive(xMutex);`
+
+```c
+SemaphoreHandle_t xMutex; // 互斥量句柄
+
+// 1. 创建互斥量（在初始化函数中执行）
+void vCreateMutex( void )
+{
+    xMutex = xSemaphoreCreateMutex();
+    if( xMutex == NULL )
+    {
+        // 处理创建失败（如打印日志、触发告警）
+    }
+}
+
+// 2. 任务中使用互斥量保护共享资源
+void vTaskFunction( void * pvParameters )
+{
+    for( ;; )
+    {
+        // 3. 获取互斥量，无限等待
+        if( xSemaphoreTake( xMutex, portMAX_DELAY ) == pdTRUE )
+        {
+            // 4. 临界区：访问共享资源（如串口、传感器、共享变量）
+            // ...
+
+            // 5. 释放互斥量（必须执行，否则死锁）
+            xSemaphoreGive( xMutex );
+        }
+    }
+}
+```
